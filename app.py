@@ -16,9 +16,9 @@ st.set_page_config(page_title="Tesla AI Predictor", layout="wide")
 # ----------------------------
 @st.cache_resource
 def load_models():
-    lstm = load_model("lstm_model.keras")
+    lstm = load_model("lstm_model.keras",compile=False)
     try:
-        rnn = load_model("rnn_model.keras")
+        rnn = load_model("rnn_model.keras",compile=False)
     except:
         rnn = None
     return lstm, rnn
